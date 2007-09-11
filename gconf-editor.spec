@@ -36,12 +36,9 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -rf $RPM_BUILD_ROOT/var/lib/scrollkeeper
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="%{_bindir}/gconf-editor" icon="%{_datadir}/icons/hicolor/48x48/apps/gconf-editor.png" title="GConf Editor" longtitle="Directly edit your entire configuration database" needs="gnome" section="Configuration/GNOME/Advanced" startup_notify="true" xdg="true"
-EOF
 desktop-file-install --vendor="" \
-  --remove-category="Application" \
+  --remove-category="System" \
+  --add-category="Settings" \
   --add-category="X-MandrivaLinux-System-Configuration-GNOME-Advanced" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
@@ -71,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README AUTHORS NEWS
 %{_bindir}/*
-%{_menudir}/*
 %{_mandir}/man1/*
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
