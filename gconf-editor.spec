@@ -6,7 +6,6 @@ Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.b
 Patch: gconf-editor-2.19.92-desktopentry.patch
 License: GPL
 Group: Graphical desktop/GNOME
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: libgnomeui2-devel
 BuildRequires: libGConf2-devel >= 2.9.2
 BuildRequires: perl-XML-Parser
