@@ -1,7 +1,7 @@
 Summary: An editor for the GConf configuration system
 Name: gconf-editor
-Version: 2.20.0
-Release: %mkrel 3
+Version: 2.22.0
+Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch: gconf-editor-2.19.92-desktopentry.patch
 License: GPL
