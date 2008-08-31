@@ -1,15 +1,15 @@
 Summary: An editor for the GConf configuration system
 Name: gconf-editor
-Version: 2.22.0
+Version: 2.23.91
 Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-Patch: gconf-editor-2.19.92-desktopentry.patch
-License: GPL
+#gw the COPYING is v3 but all comments say v2+
+License: GPLv2+
 Group: Graphical desktop/GNOME
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: libgnomeui2-devel
 BuildRequires: libGConf2-devel >= 2.9.2
-BuildRequires: perl-XML-Parser
+BuildRequires: intltool
 BuildRequires: desktop-file-utils
 BuildRequires: gnome-doc-utils libxslt-proc
 Requires(post): scrollkeeper
@@ -21,7 +21,6 @@ gconf-edit is an editor for the GConf configuration system
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 
@@ -74,8 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/applications/*
-%{_datadir}/pixmaps/*
-%{_datadir}/icons/hicolor/48x48/apps/gconf-editor.png
+%{_datadir}/icons/hicolor/*/*/*
+%_datadir/%name
 %_sysconfdir/gconf/schemas/%name.schemas
 %dir %_datadir/omf/%name
 %_datadir/omf/%name/*-C.omf
