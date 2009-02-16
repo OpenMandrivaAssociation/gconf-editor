@@ -9,6 +9,7 @@ Group: Graphical desktop/GNOME
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: libgnomeui2-devel
 BuildRequires: libGConf2-devel >= 2.9.2
+BuildRequires: polkit-devel
 BuildRequires: intltool
 BuildRequires: desktop-file-utils
 BuildRequires: gnome-doc-utils libxslt-proc
