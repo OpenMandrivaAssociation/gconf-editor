@@ -1,6 +1,6 @@
 Summary: An editor for the GConf configuration system
 Name: gconf-editor
-Version: 2.26.0
+Version: 2.27.91
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 #gw the COPYING is v3 but all comments say v2+
