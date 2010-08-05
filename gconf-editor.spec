@@ -1,13 +1,13 @@
 Summary: An editor for the GConf configuration system
 Name: gconf-editor
-Version: 2.30.0
+Version: 2.31.6
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 #gw the COPYING is v3 but all comments say v2+
 License: GPLv2+
 Group: Graphical desktop/GNOME
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires: libgnomeui2-devel
+BuildRequires: gtk+2-devel
 BuildRequires: libGConf2-devel >= 2.9.2
 BuildRequires: polkit-devel
 BuildRequires: intltool
