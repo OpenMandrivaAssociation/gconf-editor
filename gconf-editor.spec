@@ -1,7 +1,7 @@
 Summary: An editor for the GConf configuration system
 Name: gconf-editor
 Version: 2.32.0
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 #gw the COPYING is v3 but all comments say v2+
 License: GPLv2+
@@ -9,12 +9,10 @@ Group: Graphical desktop/GNOME
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires: gtk+2-devel
 BuildRequires: libGConf2-devel >= 2.9.2
-BuildRequires: polkit-devel
+BuildRequires: dbus-glib-devel
 BuildRequires: intltool
 BuildRequires: desktop-file-utils
 BuildRequires: gnome-doc-utils libxslt-proc
-Requires(post): scrollkeeper
-Requires(postun): scrollkeeper
 URL: http://www.gnome.org/
 
 %description
@@ -79,5 +77,3 @@ rm -rf $RPM_BUILD_ROOT
 %_sysconfdir/gconf/schemas/%name.schemas
 %dir %_datadir/omf/%name
 %_datadir/omf/%name/*-C.omf
-
-
