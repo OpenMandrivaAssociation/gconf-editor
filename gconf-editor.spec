@@ -28,17 +28,17 @@ gconf-edit is an editor for the GConf configuration system
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %makeinstall_std
 
-rm -rf $RPM_BUILD_ROOT/var/lib/scrollkeeper
+rm -rf %{buildroot}/var/lib/scrollkeeper
 
 desktop-file-install --vendor="" \
   --remove-category="System" \
   --add-category="Settings" \
   --add-category="X-MandrivaLinux-System-Configuration-GNOME-Advanced" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %find_lang %{name} --with-gnome
 for omf in %buildroot%_datadir/omf/%name/%name-??*.omf;do 
@@ -46,7 +46,7 @@ echo "%lang($(basename $omf|sed -e s/%name-// -e s/.omf//)) $(echo $omf|sed -e s
 done
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post
