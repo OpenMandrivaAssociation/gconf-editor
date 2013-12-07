@@ -3,7 +3,7 @@
 Summary:	An editor for the GConf configuration system
 Name:		gconf-editor
 Version:	2.32.0
-Release:	8
+Release:	9
 #gw the COPYING is v3 but all comments say v2+
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
