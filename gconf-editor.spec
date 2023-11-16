@@ -28,10 +28,10 @@ gconf-edit is an editor for the GConf configuration system
 %build
 %configure
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 rm -rf %{buildroot}/var/lib/scrollkeeper
 
