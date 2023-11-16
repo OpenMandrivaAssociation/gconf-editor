@@ -2,19 +2,19 @@
 
 Summary:	An editor for the GConf configuration system
 Name:		gconf-editor
-Version:	2.32.0
-Release:	16
+Version:	3.0.1
+Release:	1
 #gw the COPYING is v3 but all comments say v2+
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-Url:		http://www.gnome.org/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gconf-editor/%{url_ver}/%{name}-%{version}.tar.bz2
+Url:		https://www.gnome.org/
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/gconf-editor/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	rarian
 BuildRequires:	xsltproc
-BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gnome-doc-utils)
@@ -26,12 +26,12 @@ gconf-edit is an editor for the GConf configuration system
 %setup -q
 
 %build
-%configure2_5x
+%configure
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 rm -rf %{buildroot}/var/lib/scrollkeeper
 
